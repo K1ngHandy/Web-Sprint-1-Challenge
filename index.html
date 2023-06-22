@@ -73,13 +73,10 @@
         //    * If some values are truthy and some falsy, return the string "some values truthy and some falsy"
         //    * If all values are falsy, return the string "all values falsy"
         //    * If all values are truthy, return the string "all values truthy"
-        // const boolTrue = Boolean() === true ? console.log("false") : boolFalse;
-        // const boolFalse =
-        //   Boolean() === false ? console.log("true") : console.log("3");
       }
 
       // 👉 CHALLENGE 3
-      function triangleAnalyzer() {
+      function triangleAnalyzer(angleA, angleB, angleC) {
         // 🧠 triangleAnalyzer takes three arguments angleA, angleB and angleC:
         //    * If any angle is 90 degrees, return the string "this is a right triangle"
         //    * If any angle is over 90 degrees, return the string "this is an obtuse triangle"
@@ -88,16 +85,36 @@
         //    * All angles must be of type number. If not, return the string "all angles must be numbers"
         //    * All angles must be greater than zero. If not, return the string "all angles must be greater than zero"
         //    * The three angles must add up to 180. If not, return the string "angles must total 180"
+        if (typeof angleA || typeof angleB || typeof angleC !== "number") {
+          return "all angles must be numbers";
+        } else if (angleA || angleB || angleC <= 0) {
+          return "all angles must be greater than zero";
+        } else if (angleA === 90 || angleB === 90 || angleC === 90) {
+          return "this is a right triangle";
+        } else {
+          return "end";
+        }
       }
 
       // 👉 CHALLENGE 4
-      function advancedBatteryCare() {
+      function advancedBatteryCare(percentage) {
         // 🧠 advancedBatteryCare takes a percentage as its argument, expressed as a number between 0 and 100 inclusive:
         //    * If percentage in the range between 20 and 80 inclusive (E.G. 47), return a string like "your battery is at 47%"
         //    * If percentage over 80, return the string "please unplug charger"
         //    * If percentage under 20, return the string "please connect charger"
         //    * If percentage exactly 0, return the string "congrats, battery dead"
         //    * If percentage exactly 100, return the string "congrats, you cooked your battery"
+        if (percentage === 100) {
+          return "congrats, you cooked your battery";
+        } else if (percentage === 0) {
+          return "congrats, battery dead";
+        } else if (percentage < 20) {
+          return "please connect charger";
+        } else if (percentage > 80) {
+          return "please unplug charger";
+        } else if (20 < percentage < 80) {
+          return `your battery is at ${percentage}%`;
+        }
       }
 
       // 👉 CHALLENGE 5
