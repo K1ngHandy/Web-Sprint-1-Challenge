@@ -23,18 +23,18 @@
     <!-- widgets start -->
     <section class="widget">
       <p>This widget uses the advancedBatteryCare function</p>
-      <input type="range" min="0" max="100" value="50" />
-      <div>your battery is at 50%</div>
+      <input type="range" min="0" max="100" value="50" id="sliderBattery" />
+      <div id="infoBattery">your battery is at 50%</div>
     </section>
     <section class="widget">
       <p>This widget uses the timeConverter function</p>
-      <div>00:00:00</div>
+      <div id="time">00:00:00</div>
     </section>
     <section class="widget">
       <p>This widget uses the rockPaperScissors function</p>
-      <input />
-      <input />
-      <div>type your tools...</div>
+      <input id="inputTool1" />
+      <input id="inputTool2" />
+      <div id="rps">type your tools...</div>
     </section>
     <!-- widgets end -->
 
@@ -118,7 +118,7 @@
       }
 
       // 👉 CHALLENGE 5
-      function timeConverter() {
+      function timeConverter(seconds) {
         // 🧠 timeConverter takes a single argument called seconds which can range between 0 and 86399 (a full day)
         //    and returns a string in the hh:mm:ss format. Examples of use:
         //      timeConverter(0) // returns the string "00:00:00"
@@ -131,10 +131,14 @@
         //          and rounds it down to the nearest whole number. e.g. 121/60 = 2.016; Math.floor(2.016) returns 2
         // ❗ Hint: obtain hours like so: take the seconds that are passed in and divide them by the
         //          number of seconds in one hour (3,600). Then remove the decimal part.
+        // const minutes =
+        // if (0 <= seconds < 86400) {
+        //   return `
+        // }
       }
 
       // 👉 CHALLENGE 6
-      function rockPaperScissors() {
+      function rockPaperScissors(tool1, tool2) {
         // 🧠 rockPaperScissors takes two arguments tool1 and tool2 which are strings,
         //    and the desired values for these strings are 'rock' or 'paper' or 'scissors'
         //    * In the folloiwng examples, {tool1}, {tool2}, and {tool} should be replaced with either rock, paper, or scissors.
