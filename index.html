@@ -131,9 +131,12 @@
         //          and rounds it down to the nearest whole number. e.g. 121/60 = 2.016; Math.floor(2.016) returns 2
         // ❗ Hint: obtain hours like so: take the seconds that are passed in and divide them by the
         //          number of seconds in one hour (3,600). Then remove the decimal part.
-        const ss = Math.floor(seconds % 60);
-        const mm = Math.floor(seconds / 1800);
-        const hh = Math.floor(seconds / 3600);
+        let ss = Math.floor(seconds % 60);
+        ss = ss < 10 ? ss.toString().padStart(2, 0) : ss;
+        let mm = Math.floor((seconds % 3600) / 60);
+        mm = mm < 10 ? mm.toString().padStart(2, 0) : mm;
+        let hh = Math.floor(seconds / 3600);
+        hh = hh < 10 ? hh.toString().padStart(2, 0) : hh;
 
         return `${hh}:${mm}:${ss}`;
       }
