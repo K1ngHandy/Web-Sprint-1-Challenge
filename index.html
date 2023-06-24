@@ -73,6 +73,26 @@
         //    * If some values are truthy and some falsy, return the string "some values truthy and some falsy"
         //    * If all values are falsy, return the string "all values falsy"
         //    * If all values are truthy, return the string "all values truthy"
+        // console.log("falsiness");
+        if (
+          Boolean(a) &&
+          Boolean(b) &&
+          Boolean(c) &&
+          Boolean(d) &&
+          Boolean(e) === true
+        ) {
+          return "all values truthy";
+        } else if (
+          Boolean(a) &&
+          Boolean(b) &&
+          Boolean(c) &&
+          Boolean(d) &&
+          Boolean(e) === false
+        ) {
+          return "all values falsy";
+        } else {
+          return "some values truthy and some falsy";
+        }
       }
 
       // 👉 CHALLENGE 3
