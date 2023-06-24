@@ -131,10 +131,11 @@
         //          and rounds it down to the nearest whole number. e.g. 121/60 = 2.016; Math.floor(2.016) returns 2
         // ❗ Hint: obtain hours like so: take the seconds that are passed in and divide them by the
         //          number of seconds in one hour (3,600). Then remove the decimal part.
-        // const minutes =
-        // if (0 <= seconds < 86400) {
-        //   return `
-        // }
+        const ss = Math.floor(seconds % 60);
+        const mm = Math.floor(seconds / 1800);
+        const hh = Math.floor(seconds / 3600);
+
+        return `${hh}:${mm}:${ss}`;
       }
 
       // 👉 CHALLENGE 6
