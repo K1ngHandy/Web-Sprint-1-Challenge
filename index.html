@@ -181,6 +181,38 @@
         //    Tools can be invalid in two ways: either one or both are not 'rock', 'paper' or 'scissors'
         //    * If both tools are invalid, return the string "both tools invalid"
         //    * If one tool is invalid, return the string "{tool} not a valid tool", E.G. "ROCK not a valid tool"
+        if (
+          tool1 !== "rock" &&
+          tool1 !== "paper" &&
+          tool1 !== "scissors" &&
+          tool2 !== "rock" &&
+          tool2 !== "paper" &&
+          tool2 !== "scissors"
+        ) {
+          return "both tools invalid";
+        } else if (
+          tool1 !== "rock" &&
+          tool1 !== "paper" &&
+          tool1 !== "scissors"
+        ) {
+          return `${tool1} not a valid tool`;
+        } else if (
+          tool2 !== "rock" &&
+          tool2 !== "paper" &&
+          tool2 !== "scissors"
+        ) {
+          return `${tool2} not a valid tool`;
+        } else if (tool1 === tool2) {
+          return `${tool1} VS. ${tool2} is a draw!`;
+        } else if (
+          (tool1 === "rock" && tool2 === "scissors") ||
+          (tool1 === "scissors" && tool2 === "paper") ||
+          (tool1 === "paper" && tool2 === "rock")
+        ) {
+          return `${tool1} beats ${tool2}!`;
+        } else {
+          return `${tool2} beats ${tool1}!`;
+        }
       }
 
       // 👉 CHALLENGE 7
