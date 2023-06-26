@@ -75,18 +75,18 @@
         //    * If all values are truthy, return the string "all values truthy"
         // console.log("falsiness");
         if (
-          Boolean(a) &&
-          Boolean(b) &&
-          Boolean(c) &&
-          Boolean(d) &&
+          Boolean(a) === true &&
+          Boolean(b) === true &&
+          Boolean(c) === true &&
+          Boolean(d) === true &&
           Boolean(e) === true
         ) {
           return "all values truthy";
         } else if (
-          Boolean(a) &&
-          Boolean(b) &&
-          Boolean(c) &&
-          Boolean(d) &&
+          Boolean(a) === false &&
+          Boolean(b) === false &&
+          Boolean(c) === false &&
+          Boolean(d) === false &&
           Boolean(e) === false
         ) {
           return "all values falsy";
