@@ -105,14 +105,22 @@
         //    * All angles must be of type number. If not, return the string "all angles must be numbers"
         //    * All angles must be greater than zero. If not, return the string "all angles must be greater than zero"
         //    * The three angles must add up to 180. If not, return the string "angles must total 180"
-        if (typeof angleA || typeof angleB || typeof angleC !== "number") {
+        if (
+          typeof angleA !== "number" ||
+          typeof angleB !== "number" ||
+          typeof angleC !== "number"
+        ) {
           return "all angles must be numbers";
-        } else if (angleA || angleB || angleC <= 0) {
+        } else if (angleA < 1 || angleB < 1 || angleC < 1) {
           return "all angles must be greater than zero";
+        } else if (angleA + angleB + angleC !== 180) {
+          return "angles must total 180";
         } else if (angleA === 90 || angleB === 90 || angleC === 90) {
           return "this is a right triangle";
+        } else if (angleA > 90 || angleB > 90 || angleC > 90) {
+          return "this is an obtuse triangle";
         } else {
-          return "end";
+          return "this is an acute triangle";
         }
       }
 
